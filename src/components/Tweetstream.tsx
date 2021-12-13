@@ -25,6 +25,7 @@ class Tweetstream extends React.Component<{}, tweetstate> {
       console.log("disconnected from server...");
     });
 
+    // on new tweet add it to top of the array
     socket.on("tweet", (tweet) => {
       let tweetData = {
         id: tweet.data.id,
@@ -39,12 +40,17 @@ class Tweetstream extends React.Component<{}, tweetstate> {
 
   render() {
     return (
+      // rendering the tweet using Tweet component
       <div>
         <h1>Tweet Streaming</h1>
         <ul className="tweetlist">
-          {this.state.tweets.length === 0
-            ? <li className="tweetloader">Loading tweets...</li>
-            : this.state.tweets.map((tweet) => <Tweet tweet={tweet} key={tweet.id+new Date().valueOf()}/>)}
+          {this.state.tweets.length === 0 ? (
+            <li className="tweetloader">Releasing the chirps...</li>
+          ) : (
+            this.state.tweets.map((tweet) => (
+              <Tweet tweet={tweet} key={tweet.id + new Date().valueOf()} />
+            ))
+          )}
         </ul>
       </div>
     );
