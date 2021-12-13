@@ -1,4 +1,3 @@
-import React from 'react';
 import Tweetstream from './components/Tweetstream';
 function App() {
   return (

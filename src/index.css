@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.tweet {
+  list-style: none;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.tweetloader{
+  list-style: none;
+  padding: 10px;
+}
+
+h1{
+  padding: 10px;
+}

@@ -40,10 +40,12 @@ class Tweetstream extends React.Component<{}, tweetstate> {
   render() {
     return (
       <div>
-        <h1>tweets</h1>
-        {this.state.tweets.length === 0
-          ? "Loading tweets..."
-          : this.state.tweets.map((tweet) => <Tweet tweet={tweet} />)}
+        <h1>Tweet Streaming</h1>
+        <ul className="tweetlist">
+          {this.state.tweets.length === 0
+            ? <li className="tweetloader">Loading tweets...</li>
+            : this.state.tweets.map((tweet) => <Tweet tweet={tweet} key={tweet.id+new Date().valueOf()}/>)}
+        </ul>
       </div>
     );
   }
